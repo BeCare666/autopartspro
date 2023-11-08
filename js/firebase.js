@@ -41,8 +41,8 @@
                                         <img src="${photoDataUrl}" alt="${productData.NameOfstd}" style="height: 50vh; width:100%">
                                         <div class="media-links">
                                             <div class="links-wrap">
-                                            <a href="https://wa.me/+22951455930?text=Salut AutoPartsPro,%20comment%20allez-vous%20?%20Vous%20êtes%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}%20et%20je%20suis%20vraiment%20intéressé%20par%20votre%20cet article%20que%20j'ai%20vu%20sur%20votre%20site. 
-                                            J'aimerais en savoir plus s'ils vous plaît. Voici le lien du produit  : ${encodeURIComponent('https://becare666.github.io/-illicolove/userdetails&.html?id=' + `${productData.Idproduct}`)}"
+                                            <a href="https://wa.me/+22951455930?text=Salut AutoPartsPro,%20comment%20allez-vous%20?%20%Je%20suis%20vraiment%20intéressé%20par%20cet article%20que%20j'ai%20vu%20sur%20votre%20site.
+                                            J'aimerais en savoir plus s'ils vous plaît. Voici le lien du produit  : ${encodeURIComponent('https://autopartspro.netlify.app/produitdetails.html?id=' + `${productData.Idproduct}`)}"
                                             class="p-view"  
                                             >
                                               <i class="fab fa-whatsapp"></i> 
