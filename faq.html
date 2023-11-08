@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<title>Title</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css" id="color-switcher-link">
+	<link rel="stylesheet" href="css/animations.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<script src="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js"></script>
+	<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css" />
+	<!-- Inclure la bibliothèque Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+	<style>
+		* {
+	font-family: 'Lato', sans-serif;
+	}
+	</style>
+	<div hidden id="snipcart" data-api-key="NGJkMzllZjctNjM2ZC00ZWU4LWJhZmYtYmQ2MWY4MzViMThlNjM3MTM3MzYxODk4MzA3NTA1">
+	<!-- inside this hidden div most of the customization takes place ---->
+	</div>
+	<!--[if lt IE 9]>
+        <script src="js/vendor/html5shiv.min.js"></script>
+        <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!--[if lt IE 9]>
+        <div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+    <![endif]-->
+
+	<div class="preloader">
+		<div class="preloader_image"></div>
+	</div>
+
+	<!-- search modal -->
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+		<div class="widget widget_search">
+			<form method="get" class="searchform form-inline" action="/">
+				<div class="form-group">
+					<input type="text" value="" name="search" class="form-control" placeholder="Type search keyword here..." id="modal-search-input">
+				</div>
+				<button type="submit" class="theme_button input_button">Search</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			<!-- template sections -->
+
+			<section class="page_topline ds ms gorizontal_padding table_section" style="display: none;">
+				<div class="container-fluid with_border">
+					<div class="row">
+						<div class="col-sm-4 col-md-3 col-lg-2 text-xs-center text-left text-lg-right">
+							<a href="#">
+								<em><span class="__cf_email__" data-cfemail="8deceae8e3eef4cdfef8fdfde2fff9a3eee2e0">[email&#160;protected]</span></em>
+							</a>
+						</div>
+
+						<div class="col-sm-4 col-md-6 col-lg-8 text-center">
+							<div class="page_social_icons">
+								<a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+								<a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+								<a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+								<a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+								<a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+							</div>
+						</div>
+
+						<div class="col-sm-4 col-md-3 col-lg-2 text-xs-center text-right text-lg-left">
+							<ul class="inline-dropdown inline-block">
+
+								<li class="dropdown cart-dropdown">
+									<div class="total-quantity text-center">0 items -
+										<span class="total-amount">$0.00</span>
+									</div>
+									<a class="topline-button" id="cart" data-target="#" href="./" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                    <i class="fas fa-shopping-basket"></i>
+
+									</a>
+									<div class="dropdown-menu" aria-labelledby="cart">
+										<span class="grey">Recently added item(s)</span>
+										<div class="widget widget_shopping_cart">
+											<div class="widget_shopping_cart_content">
+												<ul class="cart_list product_list_widget media-list darklinks">
+													<li class="media">
+														<div class="media-left media-middle">
+															<a href="product-right.html">
+																<img src="images/01.jpg" alt="">
+															</a>
+														</div>
+														<div class="media-body media-middle">
+															<h4>
+																<a href="product-right.html">Stet clitad gubergren</a>
+															</h4>
+															<span class="quantity">1 ×
+																<span class="amount">$90</span>
+															</span>
+														</div>
+														<div class="media-body media-middle">
+															<a href="#" class="remove" title="Remove this item">
+																<i class="fas fa-trash"></i>
+															</a>
+														</div>
+													</li>
+													<li class="media">
+														<div class="media-left media-middle">
+															<a href="product-right.html">
+																<img src="images/02.jpg" alt="">
+															</a>
+														</div>
+
+														<div class="media-body media-middle">
+															<h4>
+																<a href="product-right.html">Takimata san bctus</a>
+															</h4>
+															<span class="quantity">1 ×
+																<span class="amount">$90</span>
+															</span>
+														</div>
+														<div class="media-body media-middle">
+															<a href="#" class="remove" title="Remove this item">
+                                <i class="fas fa-trash"></i>
+															</a>
+														</div>
+													</li>
+												</ul>
+												<!-- end product list -->
+
+												<p class="total">
+													<span class="grey">Cart Subtotal:
+														<span class="amount">$180</span>
+													</span>
+												</p>
+
+												<p class="buttons">
+													<a href="cart-right.html" class="theme_button color1">View All</a>
+													<a href="checkout-right.html" class="theme_button inverse">Checkout</a>
+												</p>
+
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown login-dropdown">
+									<a class="topline-button" id="login" data-target="#" href="./" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+										<i class="fas fa-user"></i>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="login">
+										<form role="form" action="/">
+											<div class="form-group">
+												<label for="login_email" class="sr-only">Email address</label>
+												<input type="email" class="form-control" id="login_email" placeholder="Email address">
+											</div>
+											<div class="form-group">
+												<label for="login_password" class="sr-only">Password</label>
+												<input type="password" class="form-control" id="login_password" placeholder="Password">
+											</div>
+											<button type="button" class="theme_button color1">
+												Log in
+											</button>
+											<div class="checkbox-inline">
+												<input type="checkbox" id="remember">
+												<label for="remember" class="bottommargin_0"> Remember Me</label>
+											</div>
+										</form>
+										<div class="topmargin_25">
+											<a href="register.html" class="text-uppercase">Forgot Your Password?</a>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="search_modal_button topline-button">
+										<i class="fas fa-search"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<header class="page_header header_darkgrey columns_padding_0 table_section">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-3 col-sm-6 text-center">
+							<a href="./" class="logo logo_image">
+								<h1>AutoPartsPro
+									<!---<span class="muellerhoff">AutoPartsPro</span>--->
+								</h1>
+								<!---<!---<img src="images/logo.png" alt="">--->--->
+							</a>
+						</div>
+						<div class="col-md-6 text-center">
+							<!-- main nav start -->
+							<nav class="mainmenu_wrapper">
+								<ul class="mainmenu nav sf-menu">
+									<li class="active">
+										<a href="index.html">Home</a>
+									</li>
+
+									<li>
+										<a href="about.html">à propos</a>
+						 
+									</li>
+									<!-- eof pages -->
+
+									<li>
+										<a href="">Nos collections</a>
+										<ul>
+											<li>
+												<a href="model.html?id=1">Produits de soin du visage</a>
+											</li>
+											<li>
+												<a href="model.html?id=2">Produits pour les lèvres</a>
+											</li>
+											<li>
+												<a href="model.html?id=3">Produits pour les cils</a>
+											</li>
+                      <li>
+												<a href="model.html?id=4">Produits pour les yeux</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="">Termes</a>
+                    <ul>
+											<li>
+												<a href="politique.html">Politique de confidentialité</a>
+											</li>
+											<li>
+												<a href="conditions.html">Conditions d'utilisation</a>
+											</li>
+										</ul>
+									</li>
+
+									<li>
+										<a href="faq.html">F.A.Q</a>
+									</li>
+
+									<!-- contacts -->
+									<li>
+										<a href="contact.html">Contact</a>
+									</li>
+									<!-- eof contacts -->
+
+								</ul>
+							</nav>
+							<!-- eof main nav -->
+							<span class="toggle_menu">
+								<span></span>
+							</span>
+						</div>
+						  <div class="col-md-3 col-sm-6 header-contacts text-center hidden-xs" style="opacity: 0;">
+							<div class="highlight inline-block fontsize_30 thin">(800) 543 4625</div>
+							<div class="fontsize_20 grey topmargin_-5">24/7 free calls</div>
+						</div> 
+					</div>
+				</div>
+			</header>
+
+			<section class="ds section_padding_70 section_padding_bottom_50">
+				<div class="container">
+					<div class="row bottommargin_20">
+						<div class="col-sm-12 text-center">
+							<h2 class="big topmargin_0 bottommargin_40">
+								Vous avez des questions ? Nous avons des réponses !
+							</h2>
+							<p class="fontsize_20 maxwidth_570 inline-block">
+								Nous sommes là pour répondre à toutes vos questions et préoccupations concernant nos produits de soins du visage. 
+								
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="col-sm-6">
+
+							<div class="panel-group" id="accordion1">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">
+												?
+												Comment passer une commande ?
+											</a>
+										</h4>
+									</div>
+									<div id="collapse1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											Pour passer une commande sur AutoPartsPro, suivez ces étapes : <hr>
+											- Visitez notre site.<hr>
+											- Parcourez notre sélection de produits de soins du visage.<hr>
+											- Ajoutez les produits de votre choix à votre panier.<hr>
+											- Procédez au paiement en suivant les instructions.<hr>
+											- Vous recevrez une confirmation de commande par e-mail.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion1" href="#collapse2" class="collapsed">
+												?
+												Quels sont les délais de livraison ?
+											</a>
+										</h4>
+									</div>
+									<div id="collapse2" class="panel-collapse collapse">
+										<div class="panel-body">
+											Nous expédions les commandes en Europe dans les deux semaines suivant la confirmation de la 
+											commande. Pour les destinations internationales, les délais de livraison sont généralement de
+											 trois semaines. 
+											Veuillez noter que ces délais peuvent varier en fonction de votre emplacement.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion1" href="#collapse3" class="collapsed">
+												?
+												Puis-je retourner un produit ?
+											</a>
+										</h4>
+									</div>
+									<div id="collapse3" class="panel-collapse collapse">
+										<div class="panel-body">
+											Oui, nous offrons une politique de retour. Si vous n'êtes pas satisfait de votre achat, 
+											vous pouvez nous retourner le produit dans les 30 jours suivant la réception de votre commande. 
+											Assurez-vous que le produit est dans son état d'origine et dans son emballage d'origine.
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<div class="panel-group" id="accordion2">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse21">
+												?
+												Quels sont les ingrédients de vos produits ?
+											</a>
+										</h4>
+									</div>
+									<div id="collapse21" class="panel-collapse collapse">
+										<div class="panel-body">
+											Nos produits sont formulés avec les meilleurs ingrédients naturels et scientifiquement 
+											avancés pour offrir des résultats exceptionnels. 
+											Vous pouvez trouver la liste complète des ingrédients sur la page de chaque produit.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse22" class="collapsed">
+												?
+												Comment puis-je contacter le service client ?
+											</a>
+										</h4>
+									</div>
+									<div id="collapse22" class="panel-collapse collapse">
+										<div class="panel-body">
+											Notre équipe de service client est là pour vous aider. Vous pouvez nous contacter 
+											par e-mail à l'adresse suivante : serviceclient@AutoPartsPro.com ou en utilisant 
+											le formulaire de contact sur notre site web. 
+											Nous sommes là pour répondre à toutes vos questions et préoccupations.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse23" class="collapsed">
+												?
+												Quels sont les avantages de vos produits de soins du visage ?
+											</a>
+										</h4>
+									</div>
+									<div id="collapse23" class="panel-collapse collapse">
+										<div class="panel-body">
+											Nos produits de soins du visage sont conçus pour offrir une expérience exceptionnelle à nos clients. Voici quelques-uns de leurs avantages :
+											- Formulés avec des ingrédients de haute qualité pour des résultats visibles. <hr>
+											- Adaptés à tous les types de peau, de sèche à grasse.<hr>
+											- Contribuent à hydrater, rajeunir et éclaircir la peau.<hr>
+											- Testés dermatologiquement pour minimiser les risques d'irritation.<hr>
+											- Livraison rapide et fiable dans le monde entier.<hr>
+											- Service client dévoué pour répondre à toutes vos questions.<hr>
+											- Garantie de satisfaction avec notre politique de retour.<hr>
+											- Des milliers de clients satisfaits nous font confiance pour leur routine de soins du visage.<hr>
+										 
+											Découvrez par vous-même pourquoi tant de personnes choisissent AutoPartsPro pour leur beauté et leur bien-être de la peau.
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="ds section_padding_70">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<h2 class="big margin_0">Contactez nous</h2>
+							<h2 class="muellerhoff topmargin_5 bottommargin_50 highlight">Contact Form</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<p class="bottommargin_20">
+								<span class="grey fontsize_12 text-uppercase bold">address:</span>
+								<br> 123, Rue de la Beauté 75001 Paris, France
+							</p>
+							<p class="bottommargin_20">
+								<span class="grey fontsize_12 text-uppercase bold">Call us:</span>
+								<br> +229 97 00 60 46
+							</p>
+							<p class="bottommargin_0">
+								<span class="grey fontsize_12 text-uppercase bold">Email:</span>
+								<br>
+								<a href="mainto:AutoPartsPro@support.com">
+									<em><span >AutoPartsPro@gmail.com</span></em>
+								</a>
+							</p>
+						</div>
+						<div class="col-md-8">
+							<form class="contact-form row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="name" class="sr-only">
+											<span class="required">*</span>
+										</label><i class="fas fa-user"></i>
+										<input  type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control with-icon" placeholder="Nom et prénom">
+										
+									</div>
+									<div class="form-group">
+										<label for="email" class="sr-only">
+											<span class="required">*</span>
+										</label>
+                    					<i class="fas fa-envelope"></i>
+										<input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control with-icon" placeholder="Adresse e-mail">
+									
+									</div>
+									<div class="form-group">
+										<label for="phone" class="sr-only">Phone number
+											<span class="required">*</span>
+										</label><i class="fas fa-phone"></i>
+										<input type="text" aria-required="true" size="30" value="" name="phone" id="phone" class="form-control with-icon" placeholder="Téléphone">
+										
+									</div>
+									<div class="form-group bottommargin_0">
+										<label for="theme" class="sr-only">Message theme
+											<span class="required">*</span>
+										</label><i class="fas fa-lightbulb"></i>
+										<input type="text" aria-required="true" size="30" value="" name="theme" id="theme" class="form-control with-icon" placeholder="Objet">
+										
+									</div>
+
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="message" class="sr-only">Message</label><i class="fas fa-pen"></i>
+										<textarea aria-required="true" rows="6" cols="45" name="message" id="message" class="form-control with-icon" placeholder="Message"></textarea>
+										
+									</div>
+
+									<button type="submit" id="contact_form_submitID" name="contact_submit" class="theme_button color1 bottommargin_0">Send</button>
+									<button type="reset" id="contact_form_clear" name="contact_clear" class="theme_button inverse bottommargin_0">Clear</button>
+								</div><br>
+								<span id="smsSuccess" style="color: darkgreen; display: none;">&nbsp;&nbsp;&nbsp; Message envoyé avec succès !</span><br>
+								<span id="smsErrors" style="color: red; display: none;">&nbsp;&nbsp;&nbsp; Votre message n'a pas éte envoyé !</span>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="ds ms section_padding_30 page_social">
+				<div class="container">
+					<div class="row topmargin_20 bottommargin_10">
+						<div class="col-sm-12 text-center">
+							<div class="page_social_icons">
+								<div class = "social-links">
+                                    <a href = "#">
+                                      <i class = "fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href = "#">
+                                      <i class = "fab fa-twitter"></i>
+                                    </a>
+                                    <a href = "#">
+                                      <i class = "fab fa-instagram"></i>
+                                    </a>
+                                    <a href = "#">
+                                      <i class = "fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href = "#">
+                                      <i class = "fab fa-pinterest"></i>
+                                    </a>
+                                  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<footer class="ds page_footer section_padding_70">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-lg-3 to_animate" data-animation="scaleAppear">
+							<div class="widget widget_text">
+								<a href="./" class="logo logo_image bottommargin_10">
+									<h1>AutoPartsPro
+										<!---<span class="muellerhoff">AutoPartsPro</span>--->
+									</h1>
+									<!---<!---<img src="images/logo.png" alt="">--->--->
+								</a>
+								<p>
+									Nous ne faisons aucun compromis en matière de qualité. Tous nos produits sont rigoureusement testés et formulés avec des ingrédients de première qualité.
+								</p>
+								<div class="size_small">
+									<i class="fab fa-cc-visa"></i>
+									<i class="fab fa-cc-discover"></i>
+									<i class="fab fa-cc-mastercard"></i>
+									<i class="fab fa-cc-amex"></i>
+									<i class="fab fa-cc-paypal"></i>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-offset-1 col-lg-4 to_animate" data-animation="scaleAppear">
+							<div class="row footer_lists">
+								<div class="col-xs-6">
+									<h3 class="widget-title">Liens utiles</h3>
+									<div>
+										<ul class="list2 bottommargin_0">
+											<li class="">
+												<a href="about.html"> À PROPOS												</a>
+											</li>
+											<li class="">
+												<a href="faq.html"> F.A.Q</a>
+											</li>
+											<li class="">
+												<a href="conditions.html">Conditions d'utilisation</a>
+											</li>
+											<li class="">
+												<a href="politique.html">Politique de confidentialité</a>
+											</li>
+											<li class="">
+												<a href="contact.html">Contact</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="col-xs-6">
+									<h3 class="widget-title">Navigation </h3>
+									<div>
+										<ul class="list2 bottommargin_0">
+										 
+											<li class="">
+												<a href="model.html?id=1"> Produits de soin du visage</a>
+											</li>
+											<li class="">
+												<a href="model.html?id=2"> Produits pour les cils</a>
+											</li>
+											<li class="">
+												<a href="model.html?id=3">Produits pour les lèvres</a>
+											</li>
+											<li class="">
+												<a href="model.html?id=4">Produits pour les yeux</a>
+											</li>
+					
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-md-3 col-lg-offset-1 col-lg-3 to_animate" data-animation="scaleAppear">
+							<div class="widget widget_banner">
+
+
+								<div class="vertical-item content-absolute ds">
+									<div class="item-media">
+										<img src="images/Revealed.jpg" alt="" style="height: 35vh; width: 45vh;">
+									</div>
+									<div class="item-content">
+										<span class="main_bg_color">
+											AutoPartsPro  
+										</span>
+										<h2>
+											une 
+											<br> vision
+										</h2>
+									</div>
+									<div class="media-links">
+										<a href="#" class="abs-link"></a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+			<section class="ls page_copyright section_padding_20">
+				<div class="container">
+					<div class="row topmargin_5 bottommargin_5">
+						<div class="col-sm-12 text-center">
+							<p class="darklinks">&copy; AutoPartsPro 2023 | Created with
+								<i class="fas fa-heart highlight"></i> by
+								<a href="">AutoPartsPro</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  	</script><script src="js/compressed.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/switcher.js"></script>
+	<script src="js/contactsendmail.js"></script>
+	 
+
+</body>
+
+</html>

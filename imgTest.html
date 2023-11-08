@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom d'image avec cadre fixe</title>
+    <style>
+        /* Styles CSS pour le conteneur de l'image */
+        #image-container {
+            position: relative;
+            overflow: hidden;
+            width: 600px; /* Largeur fixe du cadre */
+            height: 600px; /* Hauteur fixe du cadre */
+            cursor: crosshair;
+        }
+
+        /* Style de l'image agrandie */
+        #zoom-image {
+            position: absolute;
+            max-width: none; /* Pour annuler la limite de largeur */
+            transform: scale(1); /* Par défaut, l'image n'est pas agrandie */
+            transition: transform 0.3s ease; /* Animation de transition */
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <img id="zoom-image" src="images/01 (2).jpg" alt="Image à zoomer">
+    </div>
+    <script>
+        // Récupérez l'élément de l'image et son conteneur
+        const image = document.getElementById('zoom-image');
+        const imageContainer = document.getElementById('image-container');
+
+        // Gestionnaire d'événement pour agrandir l'image au survol
+        imageContainer.addEventListener('mousemove', (e) => {
+            // Calculez la position de la souris relative au conteneur de l'image
+            const x = e.clientX - imageContainer.getBoundingClientRect().left;
+            const y = e.clientY - imageContainer.getBoundingClientRect().top;
+
+            // Calculez le facteur de zoom (par exemple, 1.5 pour un zoom de 150%)
+            const zoomFactor = 1.5;
+
+            // Calculez la position de l'image agrandie pour qu'elle reste fixe dans le cadre
+            const translateX = -(x * (zoomFactor - 1));
+            const translateY = -(y * (zoomFactor - 1));
+
+            // Appliquez le facteur de zoom et la transformation à l'image
+            image.style.transform = `scale(${zoomFactor}) translate(${translateX}px, ${translateY}px)`;
+        });
+
+        // Réinitialisez l'image lorsque la souris quitte le conteneur
+        imageContainer.addEventListener('mouseout', () => {
+            image.style.transform = 'scale(1) translate(0, 0)';
+        });
+    </script>
+</body>
+</html>
